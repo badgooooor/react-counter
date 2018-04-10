@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Jumbotron,Button } from 'reactstrap';
 
 class App extends Component {
   constructor() {
@@ -30,16 +31,19 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         
-        <h1>Counter</h1>
-        
-        <div>
-          <button onClick={this.increase}>Increase</button>
-          <button onClick={this.decrease}>Decrease</button>
-          <button onClick={this.toggleClick}>
+        <Jumbotron fluid >
+          <div class="container">
+            <h1>Counter</h1>
+          </div>
+          <div class="container">
+          <Button color="primary" onClick={this.increase}>Increase</Button>
+          <Button color="danger" onClick={this.decrease}>Decrease</Button>
+          <Button class="active" onClick={this.toggleClick}>
             { this.state.show ? 'Hide number' : 'Show number' }
-          </button>
+          </Button>
           { this.state.show ? <h2>{ this.state.clicks }</h2> : '' }
-        </div>
+          </div>
+        </Jumbotron>
       </div>
     );
   }
